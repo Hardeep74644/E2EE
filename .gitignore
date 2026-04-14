@@ -1,0 +1,50 @@
+# SSL certificates - never commit private keys
+ssl/*.pem
+ssl/*.key
+ssl/*.crt
+ssl/*.csr
+
+# Synapse signing key - never commit
+config/*.signing.key
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Docker volumes (local data)
+data/
+postgres_data/
+synapse_data/
+media_store/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Node / npm (if any tooling added later)
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+log/
+logs/
+
+# Synapse homeserver generated files (keep template, not generated)
+config/homeserver.db
