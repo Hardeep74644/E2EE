@@ -56,7 +56,7 @@ export default function AdminGuard({ children }) {
     return createElement(
       "p",
       { style: { fontFamily: "sans-serif", padding: "1rem" } },
-      "Unable to validate admin token."
+      "Unable to validate admin token. Check token validity and Synapse connectivity."
     );
   }
 

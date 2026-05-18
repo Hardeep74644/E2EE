@@ -34,7 +34,7 @@ PORT="8008"
 
 echo "[$(date -Iseconds)] Starting 30s capture on port ${PORT}" | tee -a "${LOG_FILE}"
 if ! timeout 30 tcpdump -A -s 0 -ni any "tcp port ${PORT}" >"${TMP_CAPTURE}" 2>>"${LOG_FILE}"; then
-  echo "[$(date -Iseconds)] WARN: tcpdump timeout or non-zero exit during bounded capture" | tee -a "${LOG_FILE}"
+  echo "[$(date -Iseconds)] INFO: bounded capture window ended or tcpdump returned non-zero; continuing analysis" | tee -a "${LOG_FILE}"
 fi
 
 if command -v tshark >/dev/null 2>&1; then
