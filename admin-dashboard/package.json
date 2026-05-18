@@ -1,0 +1,22 @@
+{
+  "name": "admin-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Matrix Synapse admin dashboard for FR-ADMIN-01 and NFR-UI-01",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10"
+  }
+}

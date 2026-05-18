@@ -1,0 +1,22 @@
+# Purpose: Python tooling and pytest configuration for scripts and integration tests (FR-TEST-01, NFR-MAINT-01)
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure-e2ee-messaging"
+version = "0.1.0"
+description = "Capstone Secure E2EE Messaging System test and tooling package"
+requires-python = ">=3.10"
+
+dependencies = [
+  "requests>=2.31.0",
+  "python-dotenv>=1.0.0",
+  "cryptography>=43.0.0",
+  "psycopg2-binary>=2.9.9",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]

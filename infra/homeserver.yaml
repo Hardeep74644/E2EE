@@ -1,0 +1,53 @@
+# Purpose: Synapse homeserver configuration template for secure E2EE dev deployment (FR-INFRA-01, NFR-SEC-01)
+
+# Change server_name to your production domain before deployment.
+server_name: "localhost"
+pid_file: /data/homeserver.pid
+
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    resources:
+      - names: [client, federation]
+        compress: false
+
+# Development SQLite database. Keep this enabled for local quick-start only.
+database:
+  name: sqlite3
+  args:
+    database: /data/homeserver.db
+
+# Production PostgreSQL template (uncomment and disable SQLite block above):
+# database:
+#   name: psycopg2
+#   args:
+#     user: synapse
+#     password: ${POSTGRES_PASSWORD}
+#     database: synapse
+#     host: postgres
+#     port: 5432
+#     cp_min: 5
+#     cp_max: 10
+
+log_config: "/data/${server_name}.log.config"
+media_store_path: /data/media_store
+registration_shared_secret: "replace_me_with_secure_random_secret"
+report_stats: true
+
+# Registration is enabled for controlled capstone test onboarding.
+enable_registration: true
+# Enables /_synapse/admin APIs used by admin-dashboard and RBAC tests.
+enable_admin_api: true
+
+# Restrict maximum media payloads to reduce abuse risk in dev.
+max_upload_size: "10M"
+
+# TLS cert paths for direct Synapse TLS (normally terminated at nginx):
+# tls_certificate_path: /etc/letsencrypt/live/your-domain/fullchain.pem
+# tls_private_key_path: /etc/letsencrypt/live/your-domain/privkey.pem
+# Use Certbot to issue and renew certificates before enabling these options.
+
+trusted_key_servers:
+  - server_name: "matrix.org"

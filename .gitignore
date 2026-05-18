@@ -1,0 +1,14 @@
+# Purpose: Ignore local secrets, build artifacts, and runtime data (NFR-SEC-01, NFR-MAINT-01)
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+dist/
+*.db
+synapse/data/
+logs/
+docs/benchmark_results/*.log
+.DS_Store
