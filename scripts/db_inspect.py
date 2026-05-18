@@ -67,7 +67,7 @@ def normalize_content(raw_content: str) -> str:
 
 
 def detect_plaintext_leaks(rows: Iterable[MessageRow]) -> list[MessageRow]:
-    """Find message events that contain body fields without ciphertext fields."""
+    """Find likely plaintext leaks using a conservative body-without-ciphertext heuristic."""
     leaks: list[MessageRow] = []
     for row in rows:
         content = normalize_content(row.content)

@@ -48,7 +48,7 @@ def synapse_reachable(synapse_base_url: str, http_session: requests.Session) -> 
     """Check whether Synapse endpoint is reachable for integration tests."""
     try:
         response = http_session.get(f"{synapse_base_url.rstrip('/')}/_matrix/client/versions", timeout=5)
-        return response.status_code < 500
+        return response.status_code in {200, 401, 403}
     except requests.RequestException:
         return False
 

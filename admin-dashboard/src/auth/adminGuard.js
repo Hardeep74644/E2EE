@@ -33,7 +33,10 @@ export default function AdminGuard({ children }) {
         }
 
         setStatus("error");
-      } catch (_error) {
+      } catch (error) {
+        if (import.meta.env.DEV) {
+          console.error("Admin token validation failed", error);
+        }
         setStatus("error");
       }
     };

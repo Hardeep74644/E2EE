@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # Purpose: Capture Synapse traffic and verify ciphertext-only transport heuristically (FR-E2EE-02, NFR-SEC-02)
+# Note: This heuristic can produce false positives/negatives and should be paired with DB and client-side verification.
 
 set -euo pipefail
+
+if [[ "${EUID}" -ne 0 ]]; then
+  echo "FAIL: run with sudo/root privileges for tcpdump capture" >&2
+  exit 1
+fi
 
 if ! command -v tcpdump >/dev/null 2>&1; then
   echo "FAIL: tcpdump is required" >&2

@@ -3,12 +3,12 @@
 
 1. Copy environment values:
    ```bash
-   cp /home/runner/work/E2EE/E2EE/.env.example /home/runner/work/E2EE/E2EE/.env
+   cp .env.example .env
    ```
 2. Edit `.env` and set `POSTGRES_PASSWORD` to a strong value.
 3. Start the stack:
    ```bash
-   cd /home/runner/work/E2EE/E2EE/infra
+   cd infra
    docker compose --env-file ../.env up -d
    ```
 4. Verify Synapse health endpoint:

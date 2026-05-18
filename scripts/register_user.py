@@ -122,8 +122,9 @@ def main() -> int:
         fake_user_id = f"@{args.username}:localhost"
         fake_device_id = "DRYRUNDEVICE"
         keys_payload = generate_placeholder_curve25519_bundle(fake_user_id, fake_device_id)
+        safe_payload = {**registration_payload, "password": "***REDACTED***"}
         print("DRY RUN - Registration payload:")
-        print(json.dumps(registration_payload, indent=2))
+        print(json.dumps(safe_payload, indent=2))
         print("DRY RUN - Keys upload payload:")
         print(json.dumps(keys_payload, indent=2))
         return 0
