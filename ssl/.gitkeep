@@ -1,0 +1,2 @@
+# TLS certificates go here (gitignored — never commit private keys)
+# Generate with: ./scripts/generate-dev-cert.sh

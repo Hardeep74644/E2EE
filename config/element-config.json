@@ -1,0 +1,51 @@
+{
+    "default_server_config": {
+        "m.homeserver": {
+            "base_url": "https://chat.local",
+            "server_name": "chat.local"
+        },
+        "m.identity_server": {
+            "base_url": ""
+        }
+    },
+
+    "brand": "E2EE Messenger — KPU Group 7",
+    "default_theme": "dark",
+
+    "disable_custom_urls": true,
+    "disable_guests": true,
+    "disable_login_language_selector": false,
+    "disable_3pid_login": true,
+
+    "showLabsSettings": false,
+
+    "permalink_prefix": "https://chat.local",
+
+    "room_directory": {
+        "servers": ["chat.local"]
+    },
+
+    "features": {
+        "feature_voice_messages": false,
+        "feature_video_rooms": false
+    },
+
+    "default_federate": false,
+
+    "setting_defaults": {
+        "breadcrumbs": true,
+        "UIFeature.feedbackButton": false,
+        "UIFeature.registration": false,
+        "UIFeature.passwordReset": false
+    },
+
+    "jitsi": {
+        "preferredDomain": false
+    },
+
+    "map_style_url": null,
+
+    "privacy_policy_url": null,
+
+    "terms_and_conditions_links": []
+}
