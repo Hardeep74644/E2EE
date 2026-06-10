@@ -49,3 +49,4 @@ This literature review surveyed five major E2EE messaging platforms to identify 
 *Reference corrections applied April 17, 2026:*
 - *Albrecht et al. corrected from inaccurate ePrint attribution to peer-reviewed IEEE S&P 2022 paper*
 - *NCC Group URL updated to canonical nccgroup.com link (not matrix.org-hosted copy)*
+
